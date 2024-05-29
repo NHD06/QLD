@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the Dashboard</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">Student Information</div>
+        <div class="panel-body">
+            <p>Hello, <span th:text="${session.USERNAME}">User</span></p>
+            <p><a href="/logout">Logout</a></p>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Actions</div>
+        <div class="panel-body">
+            <a href="/grades/${session.USERNAME}" class="btn btn-primary">View Grades</a>
+            <a href="/awards/${session.USERNAME}" class="btn btn-primary">View Awards</a>
+            <a href="/profile/${session.USERNAME}" class="btn btn-primary">View Profile</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Grades</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Grade Information</h1>
+    <div th:if="${grade != null}">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Course 1</td>
+                    <td th:text="${grade.course1}"></td>
+                </tr>
+                <tr>
+                    <td>Course 2</td>
+                    <td th:text="${grade.course2}"></td>
+                </tr>
+                <tr>
+                    <td>Course 3</td>
+                    <td th:text="${grade.course3}"></td>
+                </tr>
+                <tr>
+                    <td>Course 4</td>
+                    <td th:text="${grade.course4}"></td>
+                </tr>
+                <tr>
+                    <td>Course 5</td>
+                    <td th:text="${grade.course5}"></td>
+                </tr>
+                <tr>
+                    <td>Course 6</td>
+                    <td th:text="${grade.course6}"></td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td th:text="${grade.average}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:if="${ERROR != null}">
+        <p th:text="${ERROR}" style="color: red"></p>
+    </div>
+    <form action="${backUrl}">
+        <button type="submit">Quay lại</button> <!-- Đã sửa từ "Quay lai" thành "Quay lại" -->
+    </form>
+</div>
+</body>
+</html>
